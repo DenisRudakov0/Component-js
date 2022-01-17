@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="css.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <p>Email</p><input type="text" id="email" value="">
+      <p>password</p><input type="text" id="password" name="" value="">
+      <br>
+      <button type="button" name="button" onclick="correct()">Отправить</button>
+    </form>
+
+    <script type="text/javascript">
+      function correct() {
+        let email_el = document.getElementsByTagName("input")[0];
+        let email = email_el.value;
+
+        let password_el = document.getElementsByTagName("input")[1];
+        let password = password_el.value;
+        let passw=  /^[A-Za-z]\w{7,14}$/;
+
+        if (email.indexOf("@") > -1 ) {
+          email_el.style.border = "3px solid green"
+        } else {
+          email_el.style.border = "3px solid red"
+        }
+
+        if (password.match(passw)) {
+          password_el.style.border = "3px solid green"
+        } else {
+          password_el.style.border = "3px solid red"
+        }
+      }
+
+    </script>
+  </body>
+</html>

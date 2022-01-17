@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="css.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src=" https://code.jquery.com/jquery-1.11.2.js "></script>
+    <script src="https://atuin.ru/demo/ui-slider/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://atuin.ru/demo/ui-slider/jquery-ui.css">
+	  <script src="https://atuin.ru/demo/ui-slider/jquery.ui.touch-punch.min.js"></script>
+  </head>
+  <body>
+
+    <div class="content">
+      <div id="polzunok"></div>
+      <br>
+      <center><b>Значение ползунка: <span style="color:green" id="result-polzunok"></span></b></center>
+    </div>
+
+    <script>
+        $("#polzunok").slider({
+            animate: "slow",
+            range: true,
+            values: [ 0, 100 ],
+            slide : function(event, ui) {
+                $("#result-polzunok").text( "от " + ui.values[ 0 ] + " до " + ui.values[ 1 ] );
+            }
+        });
+        $( "#result-polzunok" ).text("от " + $("#polzunok").slider("values", 0) + " до " + $("#polzunok").slider("values", 1));
+    </script>
+
+  </body>
+</html>

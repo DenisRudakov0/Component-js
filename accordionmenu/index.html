@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="css.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <button class="accordion">item 1</button>
+    <div class="panel">
+      <p>Ссылка 1...</p>
+      <p>Ссылка 2...</p>
+      <p>Ссылка 2...</p>
+    </div>
+
+    <button class="accordion">item 2</button>
+    <div class="panel">
+      <p>Ссылка 2...</p>
+      <p>Ссылка 2...</p>
+    </div>
+
+    <button class="accordion">item  3</button>
+    <div class="panel">
+      <p>Ссылка 3 ...</p>
+    </div>
+
+<script type="text/javascript">
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+  }
+</script>
+  </body>
+</html>
